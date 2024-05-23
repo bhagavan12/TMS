@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+<head>
+  <title>Tender Form Data</title>
+  <link rel="stylesheet" type="text/css" href="../styles/tenderList.css" />
+  
+  
+</head>
+<body>
+	<header>
+		<div class="logo">E-TMS</div>
+		<nav>
+			<ul>
+				<li><a href="../home.jsf" >Home</a></li>
+				<li><a href="bidding_hub.jsf">Bidding Hub</a></li>
+				<li><a href="bid_approvals.jsf">Bid Approvals</a></li>
+				<li><a href="tenderList.jsf" class="active">Tendor List</a></li>
+				<li><a href="profile.jsf">Profile</a></li>
+				<li><a href="#{request.contextPath}/logout.jsf"> Logout <f:param
+							name="cache" value="false" />
+				</a></li>
+				
+			</ul>
+		</nav>
+		<label for="nav_check" class="hamburger">
+			<div></div>
+			<div></div>
+			<div></div>
+		</label>
+	</header>
+	<div class="card">
+			<div class="card-body"
+				style="display: #{profileBean.editMode ? 'none' : 'block'}">
+  <h:dataTable value="#{tenderformlist.list}" var="tender" border="1">
+    <h:column class="th">
+      <f:facet name="header" class="td">Title</f:facet>
+      #{tender.title}
+    </h:column>
+    <h:column class="th">
+      <f:facet name="header" class="td">Category</f:facet>
+      #{tender.category}
+    </h:column>
+    
+    <h:column class="th">
+      <f:facet name="header" class="td">Location</f:facet>
+      #{tender.locationInput}
+    </h:column>
+    <h:column class="th">
+      <f:facet name="header" class="td">Description</f:facet>
+      #{tender.description}
+    </h:column>
+    <h:column class="th">
+      <f:facet name="header" class="td">Estimated Cost</f:facet>
+      #{tender.estimatedCost}
+    </h:column>
+   
+  </h:dataTable>
+  </div>
+		</div>
+  
+</body>
+</html>

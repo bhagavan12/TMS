@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+<head>
+<link rel="stylesheet" href="../styles/bidding_hub.css" />
+<style>
+/* Style for the modal container */
+/* CSS styles for the modal container */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  backdrop-filter: blur(10px); /* Apply blur effect for a glass-like appearance */
+}
+
+/* CSS styles for the modal content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 400px;
+  margin-top: 5px;
+  align-content: center;
+  justify-content: center;
+}
+
+/* CSS styles for the close button (x) */
+.close {
+  float: right;
+  cursor: pointer;
+}
+
+</style>
+<title>bidding_hub</title>
+</head>
+<body>
+	<!-- navbar  -->
+	<header>
+		<div class="logo">E-TMS</div>
+
+		<nav>
+			<ul>
+				<li><a href="../home.jsf">Home</a></li>
+				<li><a href="bidding_hub.xhtml" class="active">Bidding Hub</a></li>
+				<li><a href="bid_approvals.jsf">Bid Approvals</a></li>
+				<li><a href="tenderList.jsf">Tendor List</a></li>
+				<li><a href="profile.jsf">Profile</a></li>
+				<li><a href="#{request.contextPath}/logout.jsf"> Logout <f:param
+							name="cache" value="false" />
+				</a></li>
+			</ul>
+		</nav>
+		<label for="nav_check" class="hamburger">
+			<div></div>
+			<div></div>
+			<div></div>
+		</label>
+	</header>
+	<!--card-->
+	<div style="margin-left: 300px; display: inline-flex;">
+		<h:form>
+			<div id="myModal1" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" onclick="closeModal1()">x</span>
+					<p>This is a Roads category Tenders</p>
+					<!-- You can add any other content here -->
+				</div>
+			</div>
+			<main class="main" style="margin-right: 100px;">
+				<div class="card">
+					<div class="card-details">
+						<div style="margin-left: 40px;">
+
+							<img height="70px" width="70px"
+								src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MC40MTQiIGhlaWdodD0iMzcuNDE0IiB2aWV3Qm94PSIwIDAgNTAuNDE0IDM3LjQxNCI+CiAgPGcgaWQ9Ikdyb3VwXzQwMTAzIiBkYXRhLW5hbWU9Ikdyb3VwIDQwMTAzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTE5LjU4NiAtMTc5KSI+CiAgICA8cGF0aCBpZD0iUGF0aF8yNiIgZGF0YS1uYW1lPSJQYXRoIDI2IiBkPSJNMTIxLDIxNWwyNy4wNzktMjguNzJBMjAsMjAsMCwwLDEsMTYyLjYzMSwxODBIMTY5IiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8cGF0aCBpZD0iUGF0aF8yNyIgZGF0YS1uYW1lPSJQYXRoIDI3IiBkPSJNMTQ2LDIxNWwxMS4yNzEtMjMuMzQ3QTEwLDEwLDAsMCwxLDE2Ni4yNzcsMTg2SDE2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODIzY2Y4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgogICAgPHBhdGggaWQ9IlBhdGhfMjgiIGRhdGEtbmFtZT0iUGF0aCAyOCIgZD0iTTEzNCwyMTVsMTguNTExLTI1Ljc1NEExNSwxNSwwLDAsMSwxNjQuNjkxLDE4M0gxNjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzgyM2NmOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNSIvPgogIDwvZz4KPC9zdmc+Cg==" />
+						</div>
+						<p class="text-title">Roads</p>
+						<p class="text-body">Card Details</p>
+					</div>
+					<a class="card-button" href="#" onclick="openModal1()">More
+						info</a>
+				</div>
+			</main>
+		</h:form>
+		<h:form>
+			<div id="myModal2" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" onclick="closeModal2()">x</span>
+					<p>This is a Electrical category Tenders</p>
+					<!-- You can add any other content here -->
+				</div>
+			</div>
+			<main class="main" style="margin-right: 100px;">
+				<div class="card">
+
+					<div class="card-details">
+						<div style="margin-left: 40px;">
+
+							<img
+								src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MC4wMTYiIGhlaWdodD0iMzkuOTE3IiB2aWV3Qm94PSIwIDAgNDAuMDE2IDM5LjkxNyI+CiAgPGcgaWQ9Ikdyb3VwXzQwMDk2IiBkYXRhLW5hbWU9Ikdyb3VwIDQwMDk2IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNTUwOS42ODMgMzg0OS4zMDEpIj4KICAgIDxnIGlkPSJHcm91cF8yMTIxMiIgZGF0YS1uYW1lPSJHcm91cCAyMTIxMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTUwOS45ODIgLTM4NDkpIj4KICAgICAgPHBhdGggaWQ9IlBhdGhfNDgiIGRhdGEtbmFtZT0iUGF0aCA0OCIgZD0iTTIzMzEuNjU0LDMxNTkuMzg1YS42MDUuNjA1LDAsMCwwLS43NDUuMTU3TDIzMTkuMTUsMzE3NGEuNi42LDAsMCwwLC40NjkuOTg2aDUuMTg4bC0yLjYyMiw5LjgxNmEuNi42LDAsMCwwLDEuMDU0LjUzN2wxMS43My0xNC40NTZhLjYuNiwwLDAsMC0uNDY5LS45ODZoLTUuMTg3bDIuNjQ5LTkuODE0QS42LjYsMCwwLDAsMjMzMS42NTQsMzE1OS4zODVabS0zLjcxNCwxMC45NTdhLjYuNiwwLDAsMCwuNTg0Ljc2Mmg0LjcwN2wtOS4xNDYsMTEuMjcxLDIuMDk0LTcuODRhLjYuNiwwLDAsMC0uNTg0LS43NmgtNC43bDkuMTY0LTExLjI2NVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzA3LjM0NyAtMzE1Mi43ODEpIiBmaWxsPSIjODIzY2Y4IiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS13aWR0aD0iMC42Ii8+CiAgICAgIDxwYXRoIGlkPSJQYXRoXzQ5IiBkYXRhLW5hbWU9IlBhdGggNDkiIGQ9Ik0yMjA4LjYsMzEzMS43YTE4LjUxLDE4LjUxLDAsMCwxLTEwLjIzMi0zMi43ODEuNi42LDAsMCwwLC4wNC0uOWwtMS4xODMtMS4xNTksNS43LTEuMjQ2LTEuMDkxLDUuNzI5LS44MjctLjhhLjYuNiwwLDEsMC0uODQzLjg2N2wxLjYzMiwxLjU4N2EuNi42LDAsMCwwLDEuMDE2LS4zMmwxLjQ3Mi03LjczMmEuNi42LDAsMCwwLS43MjMtLjdsLTcuNjg1LDEuNjgxYS42LjYsMCwwLDAtLjI5NCwxLjAyM2wxLjUwOSwxLjQ3OGMtLjM4MS4zMzQtLjc1MS42ODUtMS4xMDYsMS4wNDdhMTkuNzEzLDE5LjcxMywwLDAsMCwxMi41MjMsMzMuNDM5bC4wNDgsMGEuNi42LDAsMCwwLC4wNDctMS4yMDdaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjE5MC4zNjEgLTMwOTMuNTkxKSIgZmlsbD0iIzgyM2NmOCIgc3Ryb2tlPSIjODIzY2Y4IiBzdHJva2Utd2lkdGg9IjAuNiIvPgogICAgICA8cGF0aCBpZD0iUGF0aF81MCIgZGF0YS1uYW1lPSJQYXRoIDUwIiBkPSJNMjQyOS4wNTQsMzA5Mi44MTZhMTkuNzI1LDE5LjcyNSwwLDAsMC0xMi4zODktNS41NzUuNi42LDAsMSwwLS4wODUsMS4yMDYsMTguNSwxOC41LDAsMCwxLDExLjkwOCwzMS40Yy0uMzcxLjM3OS0uOTMxLjg4NS0xLjUzNiwxLjM4OGEuNi42LDAsMCwwLS4wMzYuOWwxLjE5MiwxLjE2Ny01LjcsMS4yNDYsMS4wOTEtNS43My43MzUuNzE1YS42LjYsMCwxLDAsLjg0Mi0uODY3bC0xLjU0LTEuNWEuNi42LDAsMCwwLTEuMDE1LjMyMWwtMS40NzIsNy43MzNhLjYuNiwwLDAsMCwuNTk0LjcxOC42MTIuNjEyLDAsMCwwLC4xMjktLjAxNGw3LjY4NS0xLjY4MmEuNi42LDAsMCwwLC4yOTMtMS4wMjNsLTEuNTItMS40ODdjLjM1Mi0uMzA1Ljc2Ny0uNjgxLDEuMTE3LTEuMDM4QTE5LjczNiwxOS43MzYsMCwwLDAsMjQyOS4wNTQsMzA5Mi44MTZaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjM5NS41NTMgLTMwODcuMjQpIiBmaWxsPSIjODIzY2Y4IiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS13aWR0aD0iMC42Ii8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K" />
+						</div>
+						<p class="text-title">Electrical</p>
+						<p class="text-body">Card Details</p>
+					</div>
+					<a class="card-button" href="#" onclick="openModal2()">More
+						info</a>
+				</div>
+			</main>
+		</h:form>
+		<h:form>
+			<div id="myModal3" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" onclick="closeModal3()">x</span>
+					<h2>Construction Category</h2>
+					<p>In the tender management process, the Construction category
+						refers to the procurement of construction-related services and
+						projects by a company or government organization.</p>
+					<p>This category typically includes the construction,
+						renovation, or repair of various structures such as buildings,
+						roads, bridges, dams, and other infrastructure projects. Companies
+						or government entities may release construction tenders to invite
+						bids from qualified contractors and construction firms.</p>
+					<p>It is essential for bidders to thoroughly review the tender
+						documents, ask clarifications if needed, and submit their
+						proposals before the specified deadline. Construction projects can
+						vary widely in scale and complexity, so understanding the
+						requirements and submitting a competitive bid is crucial for
+						success.</p>
+					<p>Additionally, stakeholders involved in the tender evaluation
+						process must ensure fairness, transparency, and compliance with
+						relevant regulations to award the contract to the most qualified
+						bidder.</p>
+					<!-- You can add any other content here -->
+				</div>
+			</div>
+			<main class="main" style="margin-right: 100px;">
+				<div class="card">
+
+					<div class="card-details">
+						<div style="margin-left: 40px;">
+
+							<img height="70px" width="70px"
+								src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0Ny44OCIgaGVpZ2h0PSIzMi4wMDUiIHZpZXdCb3g9IjAgMCA0Ny44OCAzMi4wMDUiPgogIDxwYXRoIGlkPSJQYXRoXzIwMDQ1IiBkYXRhLW5hbWU9IlBhdGggMjAwNDUiIGQ9Ik0yNTIuNSw2OC42MzlhMS44ODUsMS44ODUsMCwxLDAsMS44ODUsMS44ODVBMS44ODQsMS44ODQsMCwwLDAsMjUyLjUsNjguNjM5Wk0yMzcuOTc1LDU0LjM1NWEzLjgsMy44LDAsMCwwLS4wNDEtLjQwOGwzLjA0Mi0yLjM1OSw5LjQzLDEzLjMzN2gyNi4wOVY1My4xMzlIMjY2LjIyN1Y0My41NTZoLTguNGwtNy40NTgsNy40NTh2MS4yMjNsLTUuMDkzLTQuNTgzYTMuNjY2LDMuNjY2LDAsMCwwLC4wNjgtLjY2NiwzLjczMywzLjczMywwLDAsMC03LjQ2NiwwLDMuMzA2LDMuMzA2LDAsMCwwLC4wMzYuMzU2bC0yLjk0NCwzLjM1MWEzLjcsMy43LDAsMCwwLS43MjYtLjA3MywzLjcyMSwzLjcyMSwwLDAsMC0yLjcxNiw2LjI3Nyw3Ni41NjIsNzYuNTYyLDAsMCwwLTIuMzksOC4xLDcuODMyLDcuODMyLDAsMCwwLS4yMjUsMS43NTcsMi44OTQsMi44OTQsMCwwLDAsMS43MjQsMi45MTQsNy43Nyw3Ljc3LDAsMCwwLDIuOTUxLjM3NWgwYzIuMjQ5LDAsMTAuOTctLjI2MSwxMC45NzYtLjI2MWwxLjU3OS0uMDQ2LTkuNC0xMi42MzFBMy43MTIsMy43MTIsMCwwLDAsMjM3Ljk3NSw1NC4zNTVaTTI1Mi4wMTQsNTEuN2w2LjQ5My02LjQ5NWg2LjA3M3Y4LjQxOWwtMy4xNzEsMy4xNjhoLTkuMzk1Wm0tNy40NDQtMi40NjQsNS44LDUuMjE4djMuOTgzaDExLjcyNWwzLjY1My0zLjY1MWg5LjF2OC40OTJIMjUxLjI1OGwtOC45MzEtMTIuNjNBMy43MTksMy43MTksMCwwLDAsMjQ0LjU3LDQ5LjIzNVpNMjQxLjYwOSw0NC45YTIuMDg3LDIuMDg3LDAsMSwxLTIuMDg3LDIuMDg2QTIuMDg2LDIuMDg2LDAsMCwxLDI0MS42MDksNDQuOVptLTMuMDYxLDQuMjE0YTMuNzM5LDMuNzM5LDAsMCwwLDEuMzksMS4xOTNsLTIuNTc5LDJhMy43NDksMy43NDksMCwwLDAtLjgzNS0uODg4Wm0tNC4zMDYsMy4xNTNhMi4wODcsMi4wODcsMCwxLDEtMi4wODcsMi4wODdBMi4wODYsMi4wODYsMCwwLDEsMjM0LjI0MSw1Mi4yNjhabTguNjk0LDE1LjkxM2MtMi42MjQuMDc1LTcuNzQ4LjIxNC05LjM0Ni4yMTRoMGE2LjUyNSw2LjUyNSwwLDAsMS0yLjMwOS0uMjQzYy0uNDUyLS4yNC0uNjctLjM3Ni0uNzE4LTEuNGE2LjM4Niw2LjM4NiwwLDAsMSwuMTgyLTEuMzkxLDc0LjUsNzQuNSwwLDAsMSwyLjItNy41MiwzLjQ2OCwzLjQ2OCwwLDAsMCwyLjM1OC4wNzZabTE2LjA4LjQ1OGExLjg4NSwxLjg4NSwwLDEsMCwxLjg4NSwxLjg4NUExLjg4NSwxLjg4NSwwLDAsMCwyNTkuMDE2LDY4LjYzOVptNi41MiwwYTEuODg1LDEuODg1LDAsMSwwLDEuODg1LDEuODg1QTEuODg0LDEuODg0LDAsMCwwLDI2NS41MzUsNjguNjM5Wm02LjUxOSwwYTEuODg1LDEuODg1LDAsMSwwLDEuODg1LDEuODg1QTEuODg0LDEuODg0LDAsMCwwLDI3Mi4wNTQsNjguNjM5Wm0wLTIuODUxSDI1Mi41YTQuNzM2LDQuNzM2LDAsMSwwLDAsOS40NzFoMTkuNTU3YTQuNzM2LDQuNzM2LDAsMCwwLDAtOS40NzFabTAsNy44MjRIMjUyLjVhMy4wODksMy4wODksMCwwLDEsMC02LjE3N2gxOS41NTdhMy4wODksMy4wODksMCwxLDEsMCw2LjE3N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMjguOTA4IC00My4yNTQpIiBmaWxsPSIjODIzY2Y4Ii8+Cjwvc3ZnPgo=" />
+						</div>
+						<p class="text-title">Construction</p>
+						<p class="text-body">Card Details</p>
+					</div>
+					<a class="card-button" href="#" onclick="openModal3()">More
+						info</a>
+				</div>
+			</main>
+		</h:form>
+	</div>
+	<div style="margin-left: 300px; display: inline-flex;">
+		<h:form>
+			<div id="myModal4" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" onclick="closeModal4()">x</span>
+					<p>This is a Railways category Tenders</p>
+					<!-- You can add any other content here -->
+				</div>
+			</div>
+			<main class="main" style="margin-right: 100px;">
+				<div class="card">
+					<div class="card-details">
+						<div style="margin-left: 40px;">
+
+							<img height="70px" width="70px"
+								src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNy44MDIiIGhlaWdodD0iMzcuODMyIiB2aWV3Qm94PSIwIDAgMzcuODAyIDM3LjgzMiI+CiAgPGcgaWQ9Ikdyb3VwXzMxNiIgZGF0YS1uYW1lPSJHcm91cCAzMTYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xOTYuMjUgLTExMy4xMDgpIj4KICAgIDxnIGlkPSJHcm91cF8zMTUiIGRhdGEtbmFtZT0iR3JvdXAgMzE1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxOTcgMTEzLjI5NykiPgogICAgICA8cGF0aCBpZD0iUGF0aF8xMjMxIiBkYXRhLW5hbWU9IlBhdGggMTIzMSIgZD0iTTIyMi40MTQsMTI0LjAzOSwyMTkuMTIsMTI0bC0zLjI5NC4wMzkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDAuOTY5IC0xMTUuNTU0KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODIzY2Y4IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogICAgICA8cGF0aCBpZD0iUGF0aF8xMjMyIiBkYXRhLW5hbWU9IlBhdGggMTIzMiIgZD0iTTIyMS43ODUsMTE5LjAzOSwyMTkuMzQ5LDExOWwtMi40MzYuMDM5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjAxLjE5OCAtMTE0LjUpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgICAgIDxwYXRoIGlkPSJQYXRoXzEyMzMiIGRhdGEtbmFtZT0iUGF0aCAxMjMzIiBkPSJNMjI0LjA0OCwxMzdIMjEzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjAwLjM3MyAtMTE4LjI5NSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzgyM2NmOCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICAgICAgPHBhdGggaWQ9IlBhdGhfMTIzNCIgZGF0YS1uYW1lPSJQYXRoIDEyMzQiIGQ9Ik0yMjMuMjk0LDEzMS4wMzksMjE4LjgsMTMxbC00LjQ5NS4wMzkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDAuNjQ4IC0xMTcuMDMpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgICAgIDxwYXRoIGlkPSJQYXRoXzEyMzUiIGRhdGEtbmFtZT0iUGF0aCAxMjM1IiBkPSJNMjI1LjA1NCwxNDUuMDM5bC02LjktLjAzOS02LjkuMDM5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjAwLjAwNyAtMTE5Ljk4MSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzgyM2NmOCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICAgICAgPHBhdGggaWQ9IlBhdGhfMTIzNiIgZGF0YS1uYW1lPSJQYXRoIDEyMzYiIGQ9Ik0yMTIuMzQxLDExOWgtNC45MjRsLTEuMjg3LDMuOTQ2aDUuNDIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTk4LjkyNSAtMTE0LjUpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgICAgIDxwYXRoIGlkPSJQYXRoXzEyMzciIGRhdGEtbmFtZT0iUGF0aCAxMjM3IiBkPSJNMjA5LjA4LDEzMWgtNS42NDRsLTEuNTQ0LDQuNzM1aDUuNjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xOTguMDMxIC0xMTcuMDMpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgICAgIDxwYXRoIGlkPSJQYXRoXzEyMzgiIGRhdGEtbmFtZT0iUGF0aCAxMjM4IiBkPSJNMjA0Ljg5MiwxNDVIMTk4LjhsLTEuOCw1LjUyNGg2LjMxMyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE5NyAtMTE5Ljk4MSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzgyM2NmOCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICAgICAgPHBhdGggaWQ9IlBhdGhfMTIzOSIgZGF0YS1uYW1lPSJQYXRoIDEyMzkiIGQ9Ik0yMjYsMTE5aDQuOTI0bDEuMjg3LDMuOTQ2aC01LjQyMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwMy4xMTQgLTExNC41KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODIzY2Y4IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogICAgICA8cGF0aCBpZD0iUGF0aF8xMjQwIiBkYXRhLW5hbWU9IlBhdGggMTI0MCIgZD0iTTIyOSwxMzFoNS42NDRsMS41NDQsNC43MzVoLTUuNjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDMuNzQ3IC0xMTcuMDMpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgICAgIDxwYXRoIGlkPSJQYXRoXzEyNDEiIGRhdGEtbmFtZT0iUGF0aCAxMjQxIiBkPSJNMjMzLDE0NWg2LjA5bDEuOCw1LjUyNGgtNi4zMTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDQuNTkgLTExOS45ODEpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgICAgIDxsaW5lIGlkPSJMaW5lXzE5NSIgZGF0YS1uYW1lPSJMaW5lIDE5NSIgeTE9IjM3LjQzMiIgeDI9IjkuNzY1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0LjU4NSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzgyM2NmOCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICAgICAgPGcgaWQ9Ikdyb3VwXzMxNCIgZGF0YS1uYW1lPSJHcm91cCAzMTQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDguNTQ1IDMwLjU0MykiPgogICAgICAgIDxwYXRoIGlkPSJQYXRoXzEyNDIiIGRhdGEtbmFtZT0iUGF0aCAxMjQyIiBkPSJNMjI3LjA0LDE1OC45NCwyMjUuNTMxLDE1MmgtMTYuMmwtMS41MDksNi45NCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNy44MjcgLTE1MikiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzgyM2NmOCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICAgICAgPC9nPgogICAgICA8bGluZSBpZD0iTGluZV8xOTYiIGRhdGEtbmFtZT0iTGluZSAxOTYiIHgxPSI5Ljc2NSIgeTE9IjM3LjQzMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjEuOTUyKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODIzY2Y4IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==" />
+						</div>
+						<p class="text-title">Railways</p>
+						<p class="text-body">Card Details</p>
+					</div>
+					<a class="card-button" href="#" onclick="openModal4()">More
+						info</a>
+				</div>
+			</main>
+
+		</h:form>
+		<h:form>
+			<div id="myModal5" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" onclick="closeModal5()">x</span>
+					<p>This is a Manufacturing category Tenders</p>
+					<!-- You can add any other content here -->
+				</div>
+			</div>
+			<main class="main" style="margin-right: 100px;">
+				<div class="card">
+					<div class="card-details">
+						<div style="margin-left: 40px;">
+
+							<img height="70px" width="70px"
+								src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OS4yNyIgaGVpZ2h0PSIzMy44NiIgdmlld0JveD0iMCAwIDQ5LjI3IDMzLjg2Ij4KICA8ZyBpZD0iZzE4NjMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zODQuMjUgLTQyLjI1KSI+CiAgICA8ZyBpZD0iZzE4MjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM4NSA2NC41NzMpIj4KICAgICAgPHBhdGggaWQ9InBhdGgxNzg0IiBkPSJNMzkwLjM5Myw4MS43ODdhNS4zOTMsNS4zOTMsMCwwLDEsMC0xMC43ODdoMzYuOTgzYTUuMzkzLDUuMzkzLDAsMSwxLDAsMTAuNzg3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTM4NSAtNzEpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICAgICAgPHBhdGggaWQ9InBhdGgxNzg2IiBkPSJNMzkzLjYyMyw3Ny4zMTFBMi4zMTEsMi4zMTEsMCwxLDEsMzkxLjMxMSw3NSwyLjMxMSwyLjMxMSwwLDAsMSwzOTMuNjIzLDc3LjMxMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zODUuOTE4IC03MS45MTgpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICAgICAgPHBhdGggaWQ9InBhdGgxNzg4IiBkPSJNNDE3LjYyMyw3Ny4zMTFBMi4zMTEsMi4zMTEsMCwxLDEsNDE1LjMxMSw3NSwyLjMxMSwyLjMxMSwwLDAsMSw0MTcuNjIzLDc3LjMxMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zOTEuNDI3IC03MS45MTgpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICAgICAgPHBhdGggaWQ9InBhdGgxNzkwIiBkPSJNNDA1LjYyMyw3Ny4zMTFBMi4zMTEsMi4zMTEsMCwxLDEsNDAzLjMxMSw3NSwyLjMxMSwyLjMxMSwwLDAsMSw0MDUuNjIzLDc3LjMxMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zODguNjcyIC03MS45MTgpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICAgICAgPHBhdGggaWQ9InBhdGgxNzkyIiBkPSJNNDQxLjYyMyw3Ny4zMTFBMi4zMTEsMi4zMTEsMCwxLDEsNDM5LjMxMSw3NSwyLjMxMSwyLjMxMSwwLDAsMSw0NDEuNjIzLDc3LjMxMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zOTYuOTM1IC03MS45MTgpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICAgICAgPHBhdGggaWQ9InBhdGgxNzk0IiBkPSJNNDI5LjYyMyw3Ny4zMTFBMi4zMTEsMi4zMTEsMCwxLDEsNDI3LjMxMSw3NSwyLjMxMSwyLjMxMSwwLDAsMSw0MjkuNjIzLDc3LjMxMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zOTQuMTgxIC03MS45MTgpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICAgIDwvZz4KICAgIDxnIGlkPSJnMTgzMyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzk0LjI0NiA1My43ODcpIj4KICAgICAgPHBhdGggaWQ9InBhdGgxODI3IiBkPSJNMzk3LDY1LjQ3NVY1N2gxMi4zMjh2OC40NzUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zOTcgLTU3KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODIzY2Y4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgICAgIDxwYXRoIGlkPSJwYXRoMTgyOSIgZD0iTTQwNSw1N3YzLjA4MiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTM5OC44MzYgLTU3KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODIzY2Y4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgICA8L2c+CiAgICA8ZyBpZD0iZzE4MzkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQxMS4xOTYgNTMuNzg3KSI+CiAgICAgIDxwYXRoIGlkPSJwYXRoMTgzNSIgZD0iTTQxOSw2NS40NzVWNTdoMTIuMzI4djguNDc1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDE5IC01NykiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzgyM2NmOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogICAgICA8cGF0aCBpZD0icGF0aDE4MzciIGQ9Ik00MjcsNTd2My4wODIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC00MjAuODM2IC01NykiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzgyM2NmOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogICAgPC9nPgogICAgPGcgaWQ9ImcxODQ1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MDIuNzIxIDQzKSI+CiAgICAgIDxwYXRoIGlkPSJwYXRoMTg0MSIgZD0iTTQwOCw1MS40NzVWNDNoMTIuMzI4djguNDc1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDA4IC00MykiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzgyM2NmOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogICAgICA8cGF0aCBpZD0icGF0aDE4NDMiIGQ9Ik00MTYsNDN2My4wODIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC00MDkuODM2IC00MykiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzgyM2NmOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==" />
+						</div>
+						<p class="text-title">Manufacturing</p>
+						<p class="text-body">Card Details</p>
+					</div>
+					<a class="card-button" href="#" onclick="openModal5()">More
+						info</a>
+				</div>
+			</main>
+		</h:form>
+		<h:form>
+			<!-- Your JSF page content here -->
+
+			<!-- The modal container -->
+			<div id="myModal6" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close" onclick="closeModal6()">x</span>
+					<p>This is a Pumps category Tenders</p>
+					<!-- You can add any other content here -->
+				</div>
+			</div>
+			<main class="main" style="margin-right: 100px;">
+				<div class="card">
+					<div class="card-details">
+						<div style="margin-left: 40px;">
+
+							<img height="70px" width="70px"
+								src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NC4zNTYiIGhlaWdodD0iMzcuMzM5IiB2aWV3Qm94PSIwIDAgNDQuMzU2IDM3LjMzOSI+CiAgPGcgaWQ9Ikdyb3VwXzQwMTQyIiBkYXRhLW5hbWU9Ikdyb3VwIDQwMTQyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODYyLjEgLTExMC4xKSI+CiAgICA8cGF0aCBpZD0iUGF0aF85NyIgZGF0YS1uYW1lPSJQYXRoIDk3IiBkPSJNOTIwLDUxNi40ODloMjAuMTg5YTQuMjYzLDQuMjYzLDAsMCwwLDQuMjU4LTQuMjU4VjQ5OS4wNTkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC01Mi45MjYgLTM4My45ODQpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjgiLz4KICAgIDxwYXRoIGlkPSJQYXRoXzk4IiBkYXRhLW5hbWU9IlBhdGggOTgiIGQ9Ik05NTcuMTIzLDQ5OS4wNTl2MTMuMTcyYTE2Ljk1MywxNi45NTMsMCwwLDEtMTYuOTM0LDE2LjkzNEg5MjAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC01Mi45MjYgLTM4My45ODQpIiBmaWxsPSJub25lIiBzdHJva2U9IiM4MjNjZjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjgiLz4KICAgIDxyZWN0IGlkPSJSZWN0YW5nbGVfMjkiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDI5IiB3aWR0aD0iNC4wNzQiIGhlaWdodD0iMTUuMzkyIiByeD0iMi4wMzciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDg2MyAxMzEuMTQ2KSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODIzY2Y4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS44Ii8+CiAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzMwIiBkYXRhLW5hbWU9IlJlY3RhbmdsZSAzMCIgd2lkdGg9IjQuMDc0IiBoZWlnaHQ9IjE1LjM5MiIgcng9IjIuMDM3IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MDUuNTU2IDExMSkgcm90YXRlKDkwKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODIzY2Y4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS44Ii8+CiAgPC9nPgo8L3N2Zz4K" />
+						</div>
+						<p class="text-title">Pumps</p>
+						<p class="text-body">Card Details</p>
+					</div>
+					<a class="card-button" href="#" onclick="openModal6()">More
+						info</a>
+				</div>
+			</main>
+
+		</h:form>
+	</div>
+	<!-- <h:form>
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closeModal()">x</span>
+				<p>This is a JSF modal example.</p>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-details">
+				<div style="margin-left: 40px;">
+					<img height="70px" width="70px"
+						src="data:image/svg+xml;base64, ... (base64-encoded SVG image) ..." />
+				</div>
+				<p class="text-title">Manufacturing</p>
+				<p class="text-body">Card Details</p>
+			</div>
+			<a class="card-button" href="#" onclick="openModal()">More info</a>
+		</div>
+	</h:form>  -->
+
+	<script type="text/javascript">
+    // Function to open the modal
+    function openModal1() {
+        var modal = document.getElementById("myModal1");
+        modal.style.display = "block";
+    }
+    function openModal2() {
+        var modal = document.getElementById("myModal2");
+        modal.style.display = "block";
+    }
+    function openModal3() {
+        var modal = document.getElementById("myModal3");
+        modal.style.display = "block";
+    }
+    function openModal4() {
+        var modal = document.getElementById("myModal4");
+        modal.style.display = "block";
+    }
+    function openModal5() {
+        var modal = document.getElementById("myModal5");
+        modal.style.display = "block";
+    }
+    function openModal6() {
+        var modal = document.getElementById("myModal6");
+        modal.style.display = "block";
+    }
+
+    // Function to close the modal
+    function closeModal1() {
+        var modal = document.getElementById("myModal1");
+        modal.style.display = "none";
+    }
+    function closeModal2() {
+        var modal = document.getElementById("myModal2");
+        modal.style.display = "none";
+    }
+    function closeModal3() {
+        var modal = document.getElementById("myModal3");
+        modal.style.display = "none";
+    }
+    function closeModal4() {
+        var modal = document.getElementById("myModal4");
+        modal.style.display = "none";
+    }
+    function closeModal5() {
+        var modal = document.getElementById("myModal5");
+        modal.style.display = "none";
+    }
+    function closeModal6() {
+        var modal = document.getElementById("myModal6");
+        modal.style.display = "none";
+    }
+    
+
+    // Close the modal if the user clicks outside the modal content
+    window.onclick = function(event) {
+        var modal = document.getElementById("myModal1");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+    window.onclick = function(event) {
+        var modal = document.getElementById("myModal2");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+    window.onclick = function(event) {
+        var modal = document.getElementById("myModal3");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+    window.onclick = function(event) {
+        var modal = document.getElementById("myModal4");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+    window.onclick = function(event) {
+        var modal = document.getElementById("myModal5");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+    window.onclick = function(event) {
+        var modal = document.getElementById("myModal6");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
+
+	<!-- Sidenav -->
+	<div class="sidenav">
+
+		<div class="sidenav-url">
+			<div class="url">
+				<a href="bidding_hub.jsf" class="active">Tendors Categories</a>
+				<hr align="center" />
+			</div>
+			<div class="url">
+				<a href="#settings">Archived Tendors</a>
+				<hr align="center" />
+			</div>
+		</div>
+	</div>
+	<!-- sidenav end-->
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>User Profile</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:outputLabel for="fame" value="Fname:"/>
+        <h:inputText id="fname" value="#{profileBean.fname}" /><br/>
+        
+        <h:outputLabel for="lame" value="Lname:"/>
+        <h:inputText id="lname" value="#{profileBean.lname}" /><br/>
+        
+        <h:outputLabel for="email" value="Email:"/>
+        <h:inputText id="email" value="#{profileBean.email}" readonly="true"/><br/>
+
+		<h:outputLabel for="phone" value="Phone:"/>
+        <h:inputText id="phone" value="#{profileBean.phone}" /><br/>
+        <!-- Add more fields as needed -->
+
+        <h:commandButton value="Save" action="#{profileBean.updateProfile()}"/>
+    </h:form>
+</h:body>
+</html>

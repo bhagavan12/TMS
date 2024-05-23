@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+xml:lang="en" lang="en">
+  <head>
+    <title>Sign Up | By Code Info</title>
+    <link rel="stylesheet" href="styles/signup.css" />
+    
+  </head>
+  <body>
+     <!-- Landing Page -->
+     <header>
+      <div class="logo">E-TMS</div>
+      <!-- <h:inputText type="checkbox" id="nav_check" hidden>   -->	
+      <nav>
+          <ul>
+              <li>
+                  <a href="login.jsf" >Vendor Login</a>
+              </li>
+              <li>
+                  <a href="admin_login.jsf" class="active">Admin Login</a>
+              </li>
+              <li>
+                  <a href="about.jsf">About</a>
+              </li>
+              <!-- <li>
+                  <a href=""></a>
+              </li> -->
+          </ul>
+      </nav>
+      <label for="nav_check" class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+      </label>
+  </header>
+      <!-- <div class="content"> -->
+        <div class="container">
+          <div class="wrapper">
+            <svg>
+              <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                E-TMS
+              </text>
+            </svg>
+            <p><b>Introducing our E-TMS</b>    Streamlining the Path to Success  </p>
+          </div>
+          
+            <h:form class="form">
+              <p class="title">Sign In </p>
+              <p class="message">Signup now and get full access to our app. </p>                 
+              <label>
+                <h:inputText name="email" value="#{adlogin.email}" id="email" 
+                required="true" validatorMessage="email should not be null" 
+                a:placeholder="Email" type="email" class="input" />
+              </label> 
+                
+              <label>
+               <h:inputSecret type="password" name="password" value="#{adlogin.password}" 
+               id="password" required="true" a:placeholder="Password" class="input" />
+              </label>
+              <h:commandButton action="#{adlogin.validateUsernamePassword()}" name="submit" class="button" value="submit">
+                <f:param name="email" value="#{adlogin.email}"/>
+                <div class="arrow-wrapper">
+                  <div class="arrow"></div>
+          
+                </div>
+              </h:commandButton>
+              
+            </h:form>
+          
+        </div>
+        
+ 
+  </body>
+</html>

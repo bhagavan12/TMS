@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="../styles/adtender.css" />
+<title>Home Page</title>
+<style type="text/css">
+	.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.message {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 5px;
+}
+
+.form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,.form label .input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form label .input:valid + span {
+  color: green;
+}
+
+.input01 {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 5px;
+}
+
+.form label .input01 + span {
+  position: absolute;
+  left: 10px;
+  top: 50px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input01:placeholder-shown + span {
+  top: 40px;
+  font-size: 0.9em;
+}
+
+.form label .input01:focus + span,.form label .input01:valid + span {
+  top: 50px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form label .input01:valid + span {
+  color: green;
+}
+
+.fancy {
+  background-color: transparent;
+  border: 2px solid #cacaca;
+  border-radius: 0px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 390;
+  letter-spacing: 2px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 8px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+}
+
+.fancy::before {
+  content: " ";
+  width: 1.7rem;
+  height: 2px;
+  background: #cacaca;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform: translateX(230%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: #818181;
+  transform: translateX(30%);
+}
+
+.fancy .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: white;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: white;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: white;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy:hover {
+  color: white;
+  background: #cacaca;
+}
+
+.fancy:hover::before {
+  width: 1.5rem;
+  background: white;
+}
+
+.fancy:hover .text {
+  color: white;
+  padding-left: 1.5em;
+}
+
+.fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+}
+
+.fancy:hover .bottom-key-1,
+ .fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+}
+.form1{
+	
+	width: 50%;
+	margin-left: 500px;
+	margin-top: 10px;
+	
+}	
+</style>
+</head>
+<body>
+
+	<header>
+		<div class="logo">E-TMS</div>
+		<nav>
+			<ul>
+				<li><a href="../ahome.jsf" >Home</a></li>
+				<li><a href="adtender.jsf" class="active">Tender ADD</a></li>
+				<li><a href="#">Bid Approvals</a></li>
+				<li><a href="../vendor/tenderList.jsf">Tender List</a></li>
+				<li><a href="#">Admin Profile</a></li>
+				<li><a href="#{request.contextPath}/logout.jsf"> Logout <f:param
+							name="cache" value="false" />
+				</a></li>
+
+			</ul>
+		</nav>
+		<label for="nav_check" class="hamburger">
+			<div></div>
+			<div></div>
+			<div></div>
+		</label>
+	</header>
+	<div class="form1">
+	<h:form class="form">
+		<div class="flex">
+			<label> <span>title</span> <h:inputText name="title"
+					value="#{tenderform.title}" id="title" required="true"
+					validatorMessage="title should not be null" a:placeholder="title"
+					type="text" class="input" />
+			</label> <label> <span>category</span> <h:inputText name="category"
+					value="#{tenderform.category}" id="category" required="true"
+					validatorMessage="category should not be null"
+					a:placeholder="category" type="text" class="input" />
+			</label>
+		</div>
+		<label> <span>date</span> <input name="date" value="#{tenderform.date}"
+				id="date" required="true" validatorMessage="date should not be null"
+				a:placeholder="Created Date" type="date" class="input" />
+		</label>
+		<label> <span>Location</span> <h:inputTextarea name="locationInput"
+				value="#{tenderform.locationInput}" id="locationInput" required="true"
+				validatorMessage="location should not be null"
+				a:placeholder="location" type="text" class="input" />
+		</label>
+		<label> <span>Description</span> <h:inputTextarea value="#{tenderform.description}"
+				id="description" required="true" name="description"
+				validatorMessage="description should not be null"
+				a:placeholder="description" type="text" rows="3" class="input01">
+			</h:inputTextarea>
+		</label>
+		<label> <span>Estimated cost</span> <h:inputText
+				name="estimatedCost" value="#{tenderform.estimatedCost}" id="estimatedCost" required="true"
+				validatorMessage="est should not be null"
+				a:placeholder="estimated cost" type="text" class="input" />
+		</label>
+		<h:commandButton value="submit" name="submit" action="#{tenderform.insert()}" class="fancy"
+			type="submit">
+			<span class="top-key"></span>
+			<span class="text"></span>
+			<span class="bottom-key-1"></span>
+			<span class="bottom-key-2"></span>
+		</h:commandButton>
+	</h:form>
+	</div>
+</body>
+</html>

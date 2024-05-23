@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="styles/ahome.css" />
+<title>Home Page</title>
+
+</head>
+<body>
+
+	<header>
+		<div class="logo">E-TMS</div>
+		<nav>
+			<ul>
+				<li><a href="ahome.jsf" class="active">Home</a></li>
+				<li><a href="admin/adtender.jsf">Tender ADD</a></li>
+				<li><a href="#">Bid Approvals</a></li>
+				<li><a href="vendor/tenderList.jsf">Tender List</a></li>
+				<li><a href="#">Admin Profile</a></li>
+				<li><a href="#{request.contextPath}/logout.jsf"> Logout <f:param
+							name="cache" value="false" />
+				</a></li>
+
+			</ul>
+		</nav>
+		<label for="nav_check" class="hamburger">
+			<div></div>
+			<div></div>
+			<div></div>
+		</label>
+	</header>
+</body>
+</html>

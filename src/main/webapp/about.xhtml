@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="styles/about.css" />
+<title>Home Page</title>
+</head>
+<body>
+	<header>
+		<div class="logo">E-TMS</div>
+		<nav>
+			<ul>
+				<li><a href="login.jsf">Vendor Login</a></li>
+				<li><a href="">Admin Login</a></li>
+				<li><a href="about.jsf" class="active">About</a></li>
+				<!-- <li>
+                  <a href=""></a>
+              </li> -->
+			</ul>
+		</nav>
+		<label for="nav_check" class="hamburger">
+			<div></div>
+			<div></div>
+			<div></div>
+		</label>
+	</header>
+	<div style="margin-left: 300px; display: inline-flex;">
+		<main class="main" style="margin-right: 100px; margin-top: 150px;">
+			<div class="card">
+				<div class="card-details">
+					<div
+						style="margin-left: 40px; margin-right: 48px; margin-top: -30px;">
+
+						<img height="80px" width="80px"
+							src="https://www.citypng.com/public/uploads/preview/hd-profile-user-round-blue-icon-symbol-transparent-png-11639594354dzabzsbpuv.png?v=2023071604" />
+					</div>
+					<p class="text-title">Veer Reddy</p>
+					<p class="text-body">2100032453</p>
+				</div>
+				<a href="#" class="card-button"
+					onclick="openTelegram1(); return false;">Contact</a>
+				<h:outputScript type="text/javascript">
+        function openTelegram1() {
+            // Replace 'your_telegram_group_link' with the actual link to your Telegram group
+            var telegramGroupLink = 'https://t.me/veerreddychinnu';
+
+            // Open the Telegram group link in a new tab/window
+            window.open(telegramGroupLink, '_blank');
+            }
+           </h:outputScript>
+			</div>
+
+
+
+		</main>
+		<main class="main" style="margin-right: 100px; margin-top: 150px;">
+			<div class="card">
+				<div class="card-details">
+					<div
+						style="margin-left: 40px; margin-right: 48px; margin-top: -30px;">
+
+						<img height="70px" width="70px"
+							src="https://www.citypng.com/public/uploads/preview/hd-profile-user-round-blue-icon-symbol-transparent-png-11639594354dzabzsbpuv.png?v=2023071604" />
+					</div>
+					<p class="text-title">Teja</p>
+					<p class="text-body">2100032454</p>
+				</div>
+				<!--  <a  href="#" onclick="openModal()">More
+							info</a> -->
+				<a href="#" class="card-button"
+					onclick="openTelegram2(); return false;">Contact</a>
+				<h:outputScript type="text/javascript">
+        function openTelegram2() {
+            // Replace 'your_telegram_group_link' with the actual link to your Telegram group
+            var telegramGroupLink = 'https://t.me/teja173017';
+
+            // Open the Telegram group link in a new tab/window
+            window.open(telegramGroupLink, '_blank');
+        }
+        
+        </h:outputScript>
+			</div>
+
+		</main>
+		<main class="main" style="margin-right: 100px; margin-top: 150px;">
+			<div class="card">
+				<div class="card-details">
+					<div
+						style="margin-left: 40px; margin-right: 48px; margin-top: -30px;">
+
+						<img height="70px" width="70px"
+							src="https://www.citypng.com/public/uploads/preview/hd-profile-user-round-blue-icon-symbol-transparent-png-11639594354dzabzsbpuv.png?v=2023071604" />
+					</div>
+					<p class="text-title">Rajiv</p>
+					<p class="text-body">2100032455</p>
+				</div>
+				<a href="#" class="card-button"
+					onclick="openTelegram3(); return false;">Contact</a>
+				<h:outputScript type="text/javascript">
+        function openTelegram3() {
+            // Replace 'your_telegram_group_link' with the actual link to your Telegram group
+            var telegramGroupLink = 'https://t.me/king_rajiv_18';
+
+            // Open the Telegram group link in a new tab/window
+            window.open(telegramGroupLink, '_blank');
+        }
+        
+        </h:outputScript>
+			</div>
+		</main>
+	</div>
+
+</body>
+</html>
